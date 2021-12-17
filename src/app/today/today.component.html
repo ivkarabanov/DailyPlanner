@@ -1,0 +1,22 @@
+<div class="row m-1">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <strong>Todo list</strong>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                <li class="list-group-item" *ngFor="let deal of deals">
+                    <span class="badge bg-info">{{deal.ItemNumber}}</span> {{deal.Description}}
+                </li>
+            </ul>
+                <hr>
+                <strong></strong>
+                <input type="text" [(ngModel)]="newDealDesc" class="form-control" placeholder="Deal description"/>
+                <button (click)="addNewDeal()" class="btn btn-primary mt-1">Add new deal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
