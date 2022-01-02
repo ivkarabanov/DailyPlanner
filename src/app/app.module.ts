@@ -8,6 +8,7 @@ import { SprintComponent } from './sprint/sprint.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DealModule } from './deal-module/deal-module.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    DealModule
   ],
   providers: [],
   bootstrap: [AppComponent]

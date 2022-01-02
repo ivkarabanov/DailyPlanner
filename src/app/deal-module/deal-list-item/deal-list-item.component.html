@@ -1,0 +1,4 @@
+<li (click)="selectDeal()" [class.done]="deal.Done" class="list-group-item">
+    <span class="badge bg-info">{{deal.ItemNumber}}</span> {{deal.Description}}
+    <input class="float-end" type="checkbox" (change)="markDone()"/>
+</li>

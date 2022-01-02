@@ -7,30 +7,53 @@ import { Deal } from 'src/models/deal';
   styleUrls: ['./today.component.css']
 })
 export class TodayComponent implements OnInit {
-  deals:Deal[] = [];
-newDealDesc: string = "";
+  deals: Deal[] = [];
+  newDealDesc: string = "";
+  selectedDeal: Deal = new Deal()
 
   constructor() {
     var deal1 = new Deal();
-    deal1.Id =0;
+    deal1.Id = 1;
     deal1.Description = "Купить теплые штаны";
     var deal2 = new Deal();
-    deal2.Description="Натрекать еще пару часов сегодня"
-    deal2.Id =1
-this.deals.push(deal1);
-this.deals.push(deal2);
-   }
+    deal2.Description = "Натрекать еще пару часов сегодня"
+    deal2.Id = 2;
+    this.deals.push(deal1);
+    this.deals.push(deal2);
+  }
 
   ngOnInit(): void {
   }
 
-addNewDeal(){
-  if (this.newDealDesc){
-    var deal = new Deal();
-    deal.Description = this.newDealDesc;
-    deal.Id = this.deals.length;
-    this.deals.push(deal);
+  addNewDeal(deal: Deal) {
+
+    var newDeal = new Deal();
+    newDeal.Id = this.deals.length+1;
+    newDeal.Description = deal.Description;
+    this.newDealDesc
+    this.deals.push(newDeal);
+
+    this.selectedDeal = new Deal();
   }
-  this.newDealDesc = "";
-}
+
+  selectDeal(deal: Deal){
+    this.selectedDeal = new Deal();
+    this.selectedDeal.Description = deal.Description;
+    this.selectedDeal.Id = deal.Id;
+  }
+
+  cancelDealUpdate(){
+    this.selectedDeal = new Deal();
+  }
+
+  updateDeal(deal:Deal){
+    let dealToUpdate = this.deals.filter(x=>x.Id == deal.Id)[0];
+    dealToUpdate.Description = deal.Description;
+    this.selectedDeal = new Deal();
+  }
+
+  markDone(deal:Deal){
+    let dealToUpdate = this.deals.filter(x=>x.Id == deal.Id)[0];
+    dealToUpdate.Done = !deal.Done;
+  }
 }

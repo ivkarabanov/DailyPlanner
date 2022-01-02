@@ -1,0 +1,12 @@
+<div>
+    <input type="text" [(ngModel)]="deal.Description" class="form-control" placeholder="Deal description" />
+    <div *ngIf="dealEmpty; else updateButtons">
+        <button (click)="addNewDeal()" class="btn btn-primary mt-1">Add new deal</button>
+    </div>
+    <ng-template #updateButtons>
+        <div>
+            <button (click)="updateDeal()" class="btn btn-primary mt-1">Update</button>
+            <button (click)="cancelDealUpdate()" class="btn btn-secondary mt-1 ms-1">Cancel</button>
+        </div>
+    </ng-template>
+</div>
