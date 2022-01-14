@@ -11,7 +11,7 @@ export class DealEditorComponent implements OnInit {
   @Output() processDealAdd:EventEmitter<Deal> = new EventEmitter<Deal>();
   @Output() processDealUpdate:EventEmitter<Deal> = new EventEmitter<Deal>();
   public get dealEmpty() {
-    return this.deal.Id ==0;
+    return this.deal.DealId ==0;
   }
   constructor() { }
 
@@ -29,7 +29,7 @@ export class DealEditorComponent implements OnInit {
   }
 
   cancelDealUpdate(){
-    this.deal.Id = 0;
+    this.deal.DealId = 0;
     this.deal.Description = "";
   }
 }

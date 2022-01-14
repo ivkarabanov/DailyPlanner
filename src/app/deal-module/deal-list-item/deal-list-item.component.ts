@@ -10,6 +10,7 @@ export class DealListItemComponent implements OnInit {
   @Input() deal:Deal = new Deal();
   @Output() processMarkDone:EventEmitter<Deal> = new EventEmitter<Deal>();
   @Output() processSelectDeal:EventEmitter<Deal> = new EventEmitter<Deal>();
+  @Output() removeDeal:EventEmitter<Deal> = new EventEmitter<Deal>();
   constructor() { }
 
   ngOnInit(): void {
@@ -21,4 +22,10 @@ export class DealListItemComponent implements OnInit {
   markDone(){
     this.processMarkDone.emit(this.deal);
   }
+
+  remove(){
+    this.removeDeal.emit(this.deal);
+  }
+
+
 }

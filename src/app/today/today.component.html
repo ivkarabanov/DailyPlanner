@@ -6,8 +6,10 @@
             </div>
             <div class="card-body">
                 <ul class="list-group">
-                    <deal-list-item *ngFor="let deal of deals" [deal]="deal" (processSelectDeal)="selectDeal($event)"
-                        (processMarkDone)="markDone($event)"></deal-list-item>
+                    <deal-list-item *ngFor="let deal of deals" [deal]="deal" 
+                    (processSelectDeal)="selectDeal($event)"
+                    (processMarkDone)="markDone($event)"
+                    (removeDeal)="removeDealItem($event)"></deal-list-item>
                 </ul>
                 <hr>
                 <app-deal-editor [deal]="selectedDeal" (processDealAdd)="addNewDeal($event)"

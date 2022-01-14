@@ -1,4 +1,7 @@
 <li (click)="selectDeal()" [class.done]="deal.Done" class="list-group-item">
-    <span class="badge bg-info">{{deal.ItemNumber}}</span> {{deal.Description}}
-    <input class="float-end" type="checkbox" (change)="markDone()"/>
+    <input type="checkbox" (change)="markDone()"/>
+    <span class="badge bg-info ms-1">{{deal.ItemNumber}}</span> {{deal.Description}}
+    <button class="float-end btn btn-sm btn-primary" (click)="remove()">
+         <i class="fa fa-remove fa-sm"></i>
+    </button>
 </li>

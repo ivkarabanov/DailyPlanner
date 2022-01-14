@@ -2,3 +2,7 @@
     text-decoration: line-through;
     color: gray;
 }
+
+.btn{
+    padding: 0px 4px;
+}
