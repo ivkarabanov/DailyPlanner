@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DealModule } from './deal-module/deal-module.module';
+import { ModelModule } from 'src/models/model.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { DealModule } from './deal-module/deal-module.module';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    DealModule
+    DealModule,
+    ModelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
